@@ -1,0 +1,30 @@
+
+div {
+    background-color: #ff9800;
+    padding: 1em;
+}
+
+a {
+    padding-left: 2em;
+}
+
+@media screen and (max-width: 980px) {
+    iframe {
+        width: 600px;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    iframe {
+        width: 400px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    iframe {
+        width: 300px;
+        height: 200px;
+    }
+}

@@ -1,0 +1,167 @@
+<h1>Registro de arbitros y oficiales de mesa</h1>
+<section class="container">
+  <h2>Sube tu Fotografía</h2>
+  <div class="loadimg-container">
+      <div class="drag-drop-box">
+        <img [src]="imgUrl" width="190px" height="190px">
+      </div>
+      <div class="button-container">
+        <div>
+          <input (change)="onFileSelected($event)" type="file" id="fileInput" class="upload-button"/>
+          <p>Formato de imagenes permitidos</p>
+          <p>PNG, JPG, GIF</p>
+          <p>No maximo de 10MB</p>
+          <div>{{ this.uploadProgress$ }}</div>
+        </div>
+      </div>
+  </div>
+
+  <div mat-dialog-title>
+    <form [formGroup]="refereeForm" (ngSubmit)="onRefereeSubmit()">
+      <fieldset>
+        <div mat-dialog-content disabled>
+          <div mat-dialog-actions class="refaction">
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-label>
+                Nombre de Oficial
+              </mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="refname"
+                name="refname"
+                required
+                >
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <mat-form-field>
+              <mat-label>
+                Fecha de Nacimiento
+              </mat-label>
+              <input
+                matInput
+                type="date"
+                formControlName="fnac"
+                name="fnac"
+                required
+                >
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-label>
+                Lugar de Nacimiento
+              </mat-label>
+              <mat-select
+                type="text"
+                name="lnac"
+                formControlName="lnac"
+                placeholder="Selecciona un estado"
+                required
+                >
+                @for ( estado of estados; track estado) {
+                  <mat-option [value]="estado.value">{{estado.viewValue}}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-label>
+                Estado de residencia
+              </mat-label>
+              <mat-select
+                type="text"
+                name="estProced"
+                formControlName="estProced"
+                placeholder="Selecciona un estado"
+                required
+                >
+                @for ( estado of estados; track estado) {
+                  <mat-option [value]="estado.value">{{estado.viewValue}}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-label>
+                Telefono Movil con Whatsapp
+              </mat-label>
+              <input
+                matInput
+                maxlength="10"
+                formControlName="refphone"
+                name="refphone"
+                required
+                >
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-label>
+                Email del oficial
+              </mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="refemail"
+                name="refemail"
+                required
+                >
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-label>
+                Eventos en los que ha participado
+              </mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="eventos"
+                name="eventos"
+                required
+                >
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label>
+                Comisión de arbitraje
+              </mat-label>
+              <input
+                matInput
+                type="text"
+                formControlName="comision"
+                name="comision"
+                required
+              >
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label>
+                Fotografía
+              </mat-label>
+              <input
+                matInput
+                type="url"
+                formControlName="img"
+                name="img"
+                [value]="this.imgUrl"
+              >
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="buttons">
+          <!-- <button [routerLinkActive]="['/loadimg:id']">Subir foto</button> -->
+          <button [routerLink]="['/home']" mat-raised-button color="primary" type="button">Cancel</button>
+          <button [disabled]="!refereeForm.valid" mat-raised-button color="primary" type="submit" [routerLink]="['/home']">Enviar</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>

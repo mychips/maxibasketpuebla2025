@@ -1,0 +1,91 @@
+<div mat-dialog-title>
+    <h3>Formulario de Pre-Registro</h3>
+  </div>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div mat-dialog-content class="content">
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label> 
+            Nombre del delegado
+          </mat-label>
+          <input matInput type="text" formControlName="name" [class.is-invalid]="nameNoValid" name="name" required>
+        </mat-form-field>
+        <small *ngIf="nameNoValid" class="error-message">Ingresa al menos nombre y apellido</small>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>
+            Telefono Movil
+          </mat-label>
+          <input matInput maxlength="10" formControlName="phone" name="phone" required>
+        </mat-form-field>
+        <small *ngIf="phoneNoValid" class="error-message">Ingresa un telefono valido</small>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>
+            Email del delegado
+          </mat-label>
+          <input matInput type="text" formControlName="email" name="email" required>
+        </mat-form-field>
+        <small *ngIf="emailNoValid" class="error-message">Ingresa un email valido</small>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>
+            Nombre del Equipo
+          </mat-label>
+          <input matInput type="text" formControlName="teamName" name="teamName" required>
+        </mat-form-field>
+        <small *ngIf="teamNoValid" class="error-message">Ingresa el nombre del equipo</small>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>
+            Categoría
+          </mat-label>
+          <mat-select name="categoria" formControlName="categorias" placeholder="Selecciona una categoria" required>
+            @for (categoria of categorias; track categoria) {
+              <mat-option [value]="categoria.value">{{categoria.viewValue}}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+        <small *ngIf="catNoValid" class="error-message">Selecciona la categoria</small>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>
+            Rama
+          </mat-label>
+          <mat-select name="rama" formControlName="rama" placeholder="Selecciona una rama" required>
+              <mat-option value="varonil">Varonil</mat-option>
+              <mat-option value="femenil">Femenil</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <small *ngIf="ramaNoValid" class="error-message">Selecciona la rama</small>
+      </div>
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>
+            Estado de Procedencia
+          </mat-label>
+          <mat-select 
+            name="estadoProced"
+            formControlName="estadoProced"
+            placeholder="Selecciona un estado"
+            required
+            >
+            @for ( estado of estados; track estado) {
+              <mat-option [value]="estado.value">{{estado.viewValue}}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+        <small *ngIf="stateNoValid" class="error-message">Selecciona un estado</small>
+      </div>
+    </div>
+    <div mat-dialog-actions class="action">
+      <button mat-raised-button [mat-dialog-close]="false" type="button">Cancel</button>
+      <button [disabled]="!userForm.valid" mat-raised-button color="primary" type="submit">{{getTitle()}}</button>
+    </div>
+  
+  </form>

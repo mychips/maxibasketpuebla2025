@@ -1,6 +1,6 @@
 {
-  "name": "maxi-basket",
-  "version": "0.0.0",
+  "name": "maxibasket",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,14 +11,23 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^19.1.0",
+    "@angular/cdk": "^19.2.8",
     "@angular/common": "^19.1.0",
     "@angular/compiler": "^19.1.0",
     "@angular/core": "^19.1.0",
+    "@angular/fire": "^19.0.0",
     "@angular/forms": "^19.1.0",
+    "@angular/material": "^19.2.8",
     "@angular/platform-browser": "^19.1.0",
     "@angular/platform-browser-dynamic": "^19.1.0",
     "@angular/router": "^19.1.0",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "firebase": "^11.6.0",
+    "font-awesome": "^4.7.0",
+    "html2pdf.js": "^0.10.1",
+    "ng2-pdf-viewer": "^10.4.0",
     "rxjs": "~7.8.0",
+    "sweetalert2": "^11.21.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
@@ -33,6 +42,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "schematics-scss-migrate": "^2.3.17",
     "typescript": "~5.7.2"
   }
 }

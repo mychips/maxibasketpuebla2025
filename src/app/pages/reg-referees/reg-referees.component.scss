@@ -1,0 +1,125 @@
+h1, h3 {
+    background-color: #000000;
+    padding: 10px;
+    margin: 0;
+    color: #f3f3f3;
+    text-align: center;
+    font-size: 2rem;
+}
+
+h2, h4, p {
+    padding-top: 10px;
+    margin: 0;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-self: center;
+}
+
+form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.loadimg-container {
+    width: 400px;
+    display: flex;
+    justify-self: center;
+    margin-bottom: 10px;
+}
+
+.form-container {
+    background-image: url('../../../assets/images/canchaBasket.jpg');
+    width: 100vw;
+    height: 100vh;
+}
+
+.mat-mdc-form-field {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    font-size: 1rem;
+    width: 90%;
+    display: flex;
+    justify-self: center;
+    padding: 20px;
+}
+
+.mat-mdc-dialog-actions {
+    padding-top: 10px;
+    font-size: 1rem;
+    width: 80%;
+    display:flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+button {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+section {
+    background: #573434;
+    background: -webkit-linear-gradient(90deg, rgba(87, 52, 52, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(222, 139, 22, 1) 100%);
+    background: -moz-linear-gradient(90deg, rgba(87, 52, 52, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(222, 139, 22, 1) 100%);
+    background: linear-gradient(90deg, rgba(87, 52, 52, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(222, 139, 22, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#573434", endColorstr="#DE8B16", GradientType=1);
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.button-container {
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.upload-button {
+    font-display: none;
+    background-color: green;
+    color: #f3f3f3;
+    border-radius: 5px;
+    border: solid 1px coral;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.drag-drop-box {
+  width: 200px;
+  height: 200px;
+  border: solid 1px #ccc;
+  margin-right: 10px;
+  color: rgba(0, 0, 0, 0.87);
+  cursor: move;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+              0 2px 2px 0 rgba(0, 0, 0, 0.14),
+              0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.drag-drop-box:active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  background-color: rgb(194, 194, 194);
+  border: dotted 2px skyblue;
+}
