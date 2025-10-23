@@ -16,6 +16,7 @@ import { HotelesComponent } from './pages/hoteles/hoteles.component';
 import { ClinicaComponent } from './pages/clinica/clinica.component';
 import { TribunalComponent } from './pages/tribunal/tribunal.component';
 import { ListasOficialesComponent } from './pages/listas-oficiales/listas-oficiales.component';
+import { GruposComponent } from './pages/grupos/grupos.component';
 
 export const routes: Routes = [
     {   path: 'home',       component: HomeComponent,           title: 'Pagina Principal'  },
@@ -30,6 +31,7 @@ export const routes: Routes = [
     {   path: 'regReferees',component: RegRefereesComponent,    title: 'Arbitros'          },
     {   path: 'listaRef'   ,component: ListaRefereesComponent,  title: 'Lista de Arbitros' },
     {   path: 'genPDF',     component: TablePDFComponent,       title: 'Tabla a PDF'       },
+    {   path: 'grupos',     component: GruposComponent,         title: 'Grupos'            },
     {   path: 'loadimg:id', component: LoadimgComponent,        title: 'Carga de Archivos' },
     {   path: 'tribunal',   component: TribunalComponent,       title: 'Tribunal'          },
     {   path: 'listOficial',component: ListasOficialesComponent,title: 'Listas Verificadas'},

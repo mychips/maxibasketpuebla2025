@@ -42,7 +42,13 @@ const MATERIAL_MODULES = [MatToolbarModule, MatIconModule, MatButtonModule];
           <span class="toolbartext">EVENTOS</span>
         </a>
         <span class="spacer"></span>
-
+        
+        <a mat-button class="butons" [routerLink]="['/grupos']">
+          <mat-icon class="icon">newspaper</mat-icon>
+          <span class="toolbartext">GRUPOS</span>
+        </a>
+        <span class="spacer"></span>
+        
         <a mat-button class="butons" [routerLink]="['/rules']">
           <mat-icon class="icon">article</mat-icon>
           <span class="toolbartext">REGLAMENTO</span>
@@ -54,6 +60,7 @@ const MATERIAL_MODULES = [MatToolbarModule, MatIconModule, MatButtonModule];
           <span class="toolbartext">NOTICIAS</span>
         </a>
         <span class="spacer"></span>
+
 
         <a mat-button class="butons" [routerLink]="['/tribunal']">
           <mat-icon class="icon">diversity_3</mat-icon>
