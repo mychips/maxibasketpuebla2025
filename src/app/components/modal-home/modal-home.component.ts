@@ -9,6 +9,5 @@ import { MatDialog, MatDialogContent } from "@angular/material/dialog";
 })
 export class ModalHomeComponent {
 
-  
 
 }

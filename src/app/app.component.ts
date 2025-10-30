@@ -26,6 +26,11 @@ export class AppComponent {
 
     slides: any[] = [
     {
+      url: '/assets/images/anuncioImportante2.jpg',
+      title: '5',
+      description: '5',
+    },
+    {
       url: './assets/images/logo_fimba_page.png',
       title: '1',
       description: '1',
@@ -45,11 +50,6 @@ export class AppComponent {
       title: '4',
       description: '4',
     },
-    // {
-    //  url: '/assets/images/mike.jpeg',
-    //  title: '5',
-    //  description: '5',
-    //},
     //{
     //  url: '/assets/images/knicks.jpg',
     //  title: '6',

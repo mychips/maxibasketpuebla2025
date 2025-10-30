@@ -25,7 +25,6 @@
     "firebase": "^11.6.0",
     "font-awesome": "^4.7.0",
     "html2pdf.js": "^0.10.1",
-    "ng2-pdf-viewer": "^10.4.0",
     "rxjs": "~7.8.0",
     "sweetalert2": "^11.21.0",
     "tslib": "^2.3.0",

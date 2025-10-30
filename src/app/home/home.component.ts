@@ -14,14 +14,14 @@ import { ModalHomeComponent } from '@components/modal-home/modal-home.component'
 export class HomeComponent implements OnInit {
   
   private readonly _dialog = inject(MatDialog);
-
+  
   
   ngOnInit(): void {
-      this._dialog.open(ModalHomeComponent, {
-        width: '600px'
-      })
-      .afterClosed().subscribe(() => {
-        console.log('The dialog was closed');
-      });
-    }
+  //    this._dialog.open(ModalHomeComponent, {
+  //      width: '600px'
+  //    })
+  //    .afterClosed().subscribe(() => {
+  //      console.log('The dialog was closed');
+  //    });
+ }
   }
