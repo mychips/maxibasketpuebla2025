@@ -17,24 +17,57 @@ import { ClinicaComponent } from './pages/clinica/clinica.component';
 import { TribunalComponent } from './pages/tribunal/tribunal.component';
 import { ListasOficialesComponent } from './pages/listas-oficiales/listas-oficiales.component';
 import { GruposComponent } from './pages/grupos/grupos.component';
+import { ResultadosComponent } from './pages/resultados/resultados.component';
+import { TablaPosicionesComponent } from './pages/tabla-posiciones/tabla-posiciones.component';
+import { RolesComponent } from './pages/roles/roles.component';
 
 export const routes: Routes = [
-    {   path: 'home',       component: HomeComponent,           title: 'Pagina Principal'  },
-    {   path: 'usersList',  component: ListComponent,           title: 'Lista de Usuarios' },
-    {   path: 'news',       component: NewsComponent,           title: 'Noticias'          },
-    {   path: 'convs',      component: ConvocaComponent,        title: 'Convocatoria'      },
-    {   path: 'eventos',    component: EventosComponent,        title: 'Eventos'           },
-    {   path: 'hoteles',    component: HotelesComponent,        title: 'Hoteles'           },
-    {   path: 'clinica',    component: ClinicaComponent,        title: 'Clinica'           },
-    {   path: 'rules',      component: RulesComponent,          title: 'Reglamento'        },
-    {   path: 'registro',   component: RegistroComponent,       title: 'Registro'          },
-    {   path: 'regReferees',component: RegRefereesComponent,    title: 'Arbitros'          },
-    {   path: 'listaRef'   ,component: ListaRefereesComponent,  title: 'Lista de Arbitros' },
-    {   path: 'genPDF',     component: TablePDFComponent,       title: 'Tabla a PDF'       },
-    {   path: 'grupos',     component: GruposComponent,         title: 'Grupos'            },
-    {   path: 'loadimg:id', component: LoadimgComponent,        title: 'Carga de Archivos' },
-    {   path: 'tribunal',   component: TribunalComponent,       title: 'Tribunal'          },
-    {   path: 'listOficial',component: ListasOficialesComponent,title: 'Listas Verificadas'},
-    {   path: 'users',      loadChildren: () => import('./features/users/users.routes')    },
-    {   path: '**',         pathMatch: 'full',              redirectTo: '/home'            },     
+  { path: 'home', component: HomeComponent, title: 'Pagina Principal' },
+  { path: 'usersList', component: ListComponent, title: 'Lista de Usuarios' },
+  { path: 'news', component: NewsComponent, title: 'Noticias' },
+  { path: 'convs', component: ConvocaComponent, title: 'Convocatoria' },
+  { path: 'eventos', component: EventosComponent, title: 'Eventos' },
+  { path: 'hoteles', component: HotelesComponent, title: 'Hoteles' },
+  { path: 'clinica', component: ClinicaComponent, title: 'Clinica' },
+  { path: 'rules', component: RulesComponent, title: 'Reglamento' },
+  { path: 'registro', component: RegistroComponent, title: 'Registro' },
+  { path: 'regReferees', component: RegRefereesComponent, title: 'Arbitros' },
+  {
+    path: 'listaRef',
+    component: ListaRefereesComponent,
+    title: 'Lista de Arbitros',
+  },
+  { path: 'genPDF', component: TablePDFComponent, title: 'Tabla a PDF' },
+  { path: 'grupos', component: GruposComponent, title: 'Grupos' },
+  {
+    path: 'loadimg:id',
+    component: LoadimgComponent,
+    title: 'Carga de Archivos',
+  },
+  { path: 'tribunal', component: TribunalComponent, title: 'Tribunal' },
+  {
+    path: 'listOficial',
+    component: ListasOficialesComponent,
+    title: 'Listas Verificadas',
+  },
+  {
+    path: 'results',
+    component: ResultadosComponent,
+    title: 'Pagina de Resultados',
+  },
+  {
+    path: 'table-Pos',
+    component: TablaPosicionesComponent,
+    title: 'Tablas de Posiciones',
+  },
+  {
+    path: 'roles',
+    component: RolesComponent,
+    title: 'Rol de juegos de finales',
+  },
+  {
+    path: 'users',
+    loadChildren: () => import('./features/users/users.routes'),
+  },
+  { path: '**', pathMatch: 'full', redirectTo: '/home' },
 ];

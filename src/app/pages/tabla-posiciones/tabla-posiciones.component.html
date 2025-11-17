@@ -1,0 +1,123 @@
+<div class="standings-container">
+  <mat-card class="mat-elevation-z8">
+    <mat-card-header>
+      <mat-card-title>Tabla de Posiciones</mat-card-title>
+      <mat-card-subtitle>
+        {{ filtrosForm.get("categoria")?.value || "Selecciona Categoría" }}
+        <span *ngIf="filtrosForm.get('rama')?.value">
+          - {{ filtrosForm.get("rama")?.value }}</span
+        >
+        <span *ngIf="filtrosForm.get('grupo')?.value">
+          - {{ filtrosForm.get("grupo")?.value }}</span
+        >
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="filtrosForm" class="filtros-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Categoría</mat-label>
+          <mat-select formControlName="categoria">
+            <mat-option *ngFor="let cat of categorias" [value]="cat">
+              {{ cat }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Rama</mat-label>
+          <mat-select formControlName="rama">
+            <mat-option *ngFor="let rama of ramas" [value]="rama">
+              {{ rama }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Grupo</mat-label>
+          <mat-select formControlName="grupo">
+            <mat-option *ngFor="let grupo of grupos" [value]="grupo">
+              {{ grupo }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+      <hr class="divider" />
+
+      <div
+        *ngIf="dataSource.data.length > 0; else noData"
+        class="table-responsive"
+      >
+        <table mat-table [dataSource]="dataSource" matSort>
+          <ng-container matColumnDef="pos">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>#</th>
+            <td mat-cell *matCellDef="let element; let i = index">
+              {{ i + 1 }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="nombre">
+              Equipo
+            </th>
+            <td mat-cell *matCellDef="let element" class="team-name">
+              {{ element.nombre }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="pj">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="pj">PJ</th>
+            <td mat-cell *matCellDef="let element">{{ element.pj }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="pg">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="pg">PG</th>
+            <td mat-cell *matCellDef="let element">{{ element.pg }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="pp">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="pp">PP</th>
+            <td mat-cell *matCellDef="let element">{{ element.pp }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="pf">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="pf">PF</th>
+            <td mat-cell *matCellDef="let element">{{ element.pf }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="pc">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="pc">PC</th>
+            <td mat-cell *matCellDef="let element">{{ element.pc }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="dif">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header="dif">DIF</th>
+            <td
+              mat-cell
+              *matCellDef="let element"
+              [class.positive]="element.dif > 0"
+              [class.negative]="element.dif < 0"
+            >
+              {{ element.dif > 0 ? "+" : "" }}{{ element.dif }}
+            </td>
+          </ng-container>
+
+          <tr
+            mat-header-row
+            *matHeaderRowDef="displayedColumns; sticky: true"
+          ></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+
+      <ng-template #noData>
+        <div class="no-data-container">
+          <p>
+            Por favor, selecciona una categoría, rama y grupo para ver la tabla
+            de posiciones.
+          </p>
+        </div>
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+</div>

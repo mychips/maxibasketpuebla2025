@@ -1,21 +1,2 @@
-<section>
-  <mat-card>
-    <div class="sliderRoot">
-      <app-image-slider class="slider"
-        [indicatorsVisible]="true"
-        [animationSpeed]="100"
-        [slides]="slides"
-        [autoPlay]="false"
-        [autoPlaySpeed]="2000"
-      ></app-image-slider>
-    </div>
-    @defer{
-      <app-toolbar (onNewUserEvent)="onClickNewUser()"/>
-      <router-outlet></router-outlet>
-    }@loading(minimum 1s) {
-      <div class="spinner-container">
-        <mat-spinner mode="indeterminate"></mat-spinner>
-      </div>
-    }
-  </mat-card>
-</section>
+
+<router-outlet></router-outlet>

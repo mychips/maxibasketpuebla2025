@@ -1,130 +1,197 @@
+<!-- Slider -->
+<section>
+  <mat-card>
+    @defer{
+    <app-toolbar (onNewUserEvent)="onClickNewUser()" />
+    }@loading(minimum 0.5s) {
+    <div class="spinner-container">
+      <mat-spinner mode="indeterminate"></mat-spinner>
+    </div>
+    }
+  </mat-card>
+</section>
+
 <!-- Banner -->
 <section id="banner">
   <div class="inner">
-      <h2>Campeonato Nacional de Maxibaloncesto</h2>
-      <h3>Puebla, Puebla 2025</h3>
-      <h4>12 al 17 de Noviembre</h4>
-      <p>A la pasion no le importa la edad.</p>
-      <ul class="actions special">
-      <li><a [routerLink]="['/listOficial']" class="button large wide scrolly-middle">Listas de Equipos verificados</a></li>
-      </ul>
+    <ul class="actions special">
+      <li>
+        <a [routerLink]="['/results']" class="button large wide scrolly-middle">
+          Resultados de la Jornada</a
+        >
+      </li>
+    </ul>
+    <ul class="actions special">
+      <li>
+        <a [routerLink]="['/roles']" class="button large wide scrolly-middle">
+          Rol de juegos Semi y Finales</a
+        >
+      </li>
+    </ul>
+    <!--<ul class="actions special">
+      <li>
+        <a
+          [routerLink]="['/table-Pos']"
+          class="button large wide scrolly-middle"
+        >
+          Roles de Juego</a
+        >
+      </li>
+    </ul>-->
+    <!-- <ul class="actions special">
+      <li>
+        <a [routerLink]="['/finals']" class="button large wide scrolly-middle">
+          Organigrama de Finales</a
+        >
+      </li>
+    </ul>-->
+    <h2>Campeonato Nacional de Maxibaloncesto</h2>
+    <h3>Puebla, Puebla 2025</h3>
+    <h4>12 al 17 de Noviembre</h4>
+    <p>A la pasion no le importa la edad.</p>
   </div>
 </section>
 
-  <!-- Spotlight -->
-  <article id="one" class="spotlight odd accent1">
-    <div class="inner">
-      <div class="image" data-position="top right">
-        <img src="../../assets/images/canchaBasket.jpg" alt="" />
-      </div>
-      <h2>Sedes<br />
-        con canchas<br />
-        de primer nivel</h2>
-      <div class="content" >
-        <h3>Visita todos los lugares <br>donde tendremos juegos</h3>
-        <p>Tenemos las mejores canchas para que disfrutes de los juegos</p>
-        <ul class="actions">
-          <li><a class="button primary accent1">Ver más</a></li>
-        </ul>
-      </div>
+<!-- Spotlight -->
+<article id="one" class="spotlight odd accent1">
+  <div class="inner">
+    <div class="image" data-position="top right">
+      <img src="../../assets/images/canchaBasket.jpg" alt="" />
     </div>
-  </article>
+    <h2>
+      Sedes<br />
+      con canchas<br />
+      de primer nivel
+    </h2>
+    <div class="content">
+      <h3>Visita todos los lugares <br />donde tendremos juegos</h3>
+      <p>Tenemos las mejores canchas para que disfrutes de los juegos</p>
+      <ul class="actions">
+        <li><a class="button primary accent1">Ver más</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
 
 <!-- Spotlight -->
-  <article id="two" class="spotlight even accent2">
-    <div class="inner">
-      <div class="image" data-position="top left">
-        <img src="../../assets/images/sadol.jpg" alt="" />
-      </div>
-      <h2>Reglas <br />
-         del <br />
-        torneo</h2>
-      <div class="content">
-        <h3>Conoce el reglamento <br>del torneo</h3>
-        <p>Entérate de como se va a sancionar el torneo</p>
-        <ul class="actions">
-          <li><a [routerLink]="['/rules']" class="button primary accent2">Ver más</a></li>
-        </ul>
-      </div>
+<article id="two" class="spotlight even accent2">
+  <div class="inner">
+    <div class="image" data-position="top left">
+      <img src="../../assets/images/manosbalon.avif" alt="" />
     </div>
-  </article>
+    <h2>
+      Reglas <br />
+      del <br />
+      torneo
+    </h2>
+    <div class="content">
+      <h3>Conoce el reglamento <br />del torneo</h3>
+      <p>Entérate de como se va a sancionar el torneo</p>
+      <ul class="actions">
+        <li>
+          <a [routerLink]="['/rules']" class="button primary accent2"
+            >Ver más</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</article>
 
 <!-- Spotlight -->
-  <article id="three" class="spotlight odd accent3">
-    <div class="inner">
-      <div class="image" data-position="center right">
-        <img src="../../assets/images/staff.jpg" alt="" />
-      </div>
-      <h2>Convocatoria<br />
+<article id="three" class="spotlight odd accent3">
+  <div class="inner">
+    <div class="image" data-position="center right">
+      <img src="../../assets/images/log_fimba2.png" alt="" />
+    </div>
+    <h2>
+      Convocatoria<br />
       Nivel<br />
-      Nacional</h2>
-      <div class="content">
-        <h3>¿Quienes pueden <br>participar?</h3>
-        <p>Los jugadores que cumplan con las edades de la Convocatoria</p>
-        <ul class="actions">
-          <li><a [routerLink]="['/convs']" class="button primary accent3">Ver más</a></li>
-        </ul>
-      </div>
+      Nacional
+    </h2>
+    <div class="content">
+      <h3>¿Quienes pueden <br />participar?</h3>
+      <p>Los jugadores que cumplan con las edades de la Convocatoria</p>
+      <ul class="actions">
+        <li>
+          <a [routerLink]="['/convs']" class="button primary accent3"
+            >Ver más</a
+          >
+        </li>
+      </ul>
     </div>
-  </article>
+  </div>
+</article>
 
-   <!-- Spotlight -->
-   <article id="two" class="spotlight even accent2">
-    <div class="inner">
-      <div class="image" data-position="top left">
-        <img src="../../assets/images/page.jpg" alt="" />
-      </div>
-      <h2>Eventos<br />
+<!-- Spotlight -->
+<article id="two" class="spotlight even accent2">
+  <div class="inner">
+    <div class="image" data-position="top left">
+      <img src="../../assets/images/page.jpg" alt="" />
+    </div>
+    <h2>
+      Eventos<br />
       extras<br />
-      </h2>
-      <div class="content">
-        <h3>Clinica de arbitraje</h3>
-        <p>Participa y certificate como arbitro de primer nivel.</p>
-        <ul class="actions">
-          <li><a [routerLink]="['/clinica']" class="button primary accent2">Ver más</a></li>
-        </ul>
-      </div>
+    </h2>
+    <div class="content">
+      <h3>Clinica de arbitraje</h3>
+      <p>Participa y certificate como arbitro de primer nivel.</p>
+      <ul class="actions">
+        <li>
+          <a [routerLink]="['/clinica']" class="button primary accent2"
+            >Ver más</a
+          >
+        </li>
+      </ul>
     </div>
-  </article>
+  </div>
+</article>
 
 <!-- Spotlight -->
-  <article id="one" class="spotlight odd accent1">
-    <div class="inner">
-      <div class="image" data-position="top right">
-        <img src="../../assets/images/presMaxBasket25.jpg" alt="" />
-      </div>
-      <h2>Rol<br />
+<article id="one" class="spotlight odd accent1">
+  <div class="inner">
+    <div class="image" data-position="top right">
+      <img src="../../assets/images/logo_fimba_page.png" alt="" />
+    </div>
+    <h2>
+      Rol<br />
       de<br />
-      Juego</h2>
-      <div class="content">
-        <h3>Quienes, cuando <br>y donde juegan</h3>
-        <p>Enterate de todo lo que necesitas para ver jugar a tus equipos favoritos.</p>
-        <ul class="actions">
-          <li><a class="button primary accent1">Ver más</a></li>
-        </ul>
-      </div>
+      Juego
+    </h2>
+    <div class="content">
+      <h3>Quienes, cuando <br />y donde juegan</h3>
+      <p>
+        Enterate de todo lo que necesitas para ver jugar a tus equipos
+        favoritos.
+      </p>
+      <ul class="actions">
+        <li><a class="button primary accent1">Ver más</a></li>
+      </ul>
     </div>
-  </article>
+  </div>
+</article>
 
 <!-- Spotlight -->
-  <article id="two" class="spotlight even accent2">
-    <div class="inner">
-      <div class="image" data-position="center left">
-        <img src="../../assets/images/balonbrilla.jpg" alt="" />
-      </div>
-      <h2>Inscripciones </h2>
-      <div class="content">
-        <h3>Cedula de inscripción</h3>
-        <p>Descarga el archivo y envialo fimbapuebla&#64;gmail.com</p>
-        <p class="cedular">Ya se cerraron las inscripciones, gracias por su comprension</p>
-        <ul class="actions">
-          <li><a disabled class="button primary accent2">Descargar</a></li>
-        </ul>
-      </div>
+<article id="two" class="spotlight even accent2">
+  <div class="inner">
+    <div class="image" data-position="center left">
+      <img src="../../assets/images/balonbrilla.jpg" alt="" />
     </div>
-  </article>
+    <h2>Inscripciones</h2>
+    <div class="content">
+      <h3>Cedula de inscripción</h3>
+      <p>Descarga el archivo y envialo fimbapuebla&#64;gmail.com</p>
+      <p class="cedular">
+        Ya se cerraron las inscripciones, gracias por su comprension
+      </p>
+      <ul class="actions">
+        <li><a disabled class="button primary accent2">Descargar</a></li>
+      </ul>
+    </div>
+  </div>
+</article>
 
-   <!-- Carousel 
+<!-- Carousel 
    <section id="four" class="wrapper style4">
     <div class="inner">
       <header class="major">

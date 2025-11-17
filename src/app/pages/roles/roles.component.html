@@ -1,0 +1,91 @@
+<mat-card class="partidos-card mat-elevation-z8">
+  <mat-card-header>
+    <!-- Usamos un icono de calendario más PRO -->
+    <div mat-card-avatar class="header-icon-container">
+      <mat-icon>sports_basketball</mat-icon>
+    </div>
+    <mat-card-title>Rol de Juegos</mat-card-title>
+    <!-- Fecha estática para este ejemplo -->
+    <mat-card-subtitle>
+      Partidos programados para el lunes 17 de Noviembre 2025
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="table-container">
+      <!-- Añadimos matSort al dataSource y matSort a la tabla -->
+      <table mat-table [dataSource]="dataSource" matSort>
+        <!-- Columna Fecha (NUEVA) -->
+        <ng-container matColumnDef="fecha">
+          <!-- mat-sort-header permite ordenar por esta columna -->
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>
+          <td mat-cell *matCellDef="let p" class="fecha-cell">
+            <!-- Usamos DatePipe para formatear -->
+            <b>{{ p.fecha | date : "MMM d" }}</b>
+          </td>
+        </ng-container>
+
+        <!-- Columna Hora -->
+        <ng-container matColumnDef="hora">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Hora</th>
+          <td mat-cell *matCellDef="let p" class="hora-cell">
+            <mat-icon>schedule</mat-icon>
+            <span>{{ p.hora }}</span>
+          </td>
+        </ng-container>
+
+        <!-- Columna Liga (con MatChips) -->
+        <ng-container matColumnDef="liga">
+          <th mat-header-cell *matHeaderCellDef>Categoria</th>
+          <td mat-cell *matCellDef="let p">
+            <!-- Usamos MatChip para un look moderno -->
+            <mat-chip-listbox aria-label="Liga del partido">
+              <mat-chip color="primary" selected>{{ p.categoria }}</mat-chip>
+            </mat-chip-listbox>
+          </td>
+        </ng-container>
+
+        <!-- Columna "Partido" (¡La más PRO!) -->
+        <ng-container matColumnDef="partido">
+          <th mat-header-cell *matHeaderCellDef>Partido</th>
+          <td mat-cell *matCellDef="let p" class="partido-cell">
+            <!-- Equipo Local -->
+            <span class="team-name team-local">{{ p.equipoLocal }}</span>
+            <div class="team-logo-placeholder local-bg">
+              {{ getTeamInitials(p.equipoLocal) }}
+            </div>
+
+            <!-- Separador -->
+            <span class="vs-separator">vs</span>
+
+            <!-- Equipo Visitante -->
+            <div class="team-logo-placeholder visitor-bg">
+              {{ getTeamInitials(p.equipoVisitante) }}
+            </div>
+            <span class="team-name team-visitor">{{ p.equipoVisitante }}</span>
+          </td>
+        </ng-container>
+
+        <!-- Columna Cancha -->
+        <ng-container matColumnDef="cancha">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let p" class="cancha-cell">
+            <mat-icon>location_on</mat-icon>
+            <span>Cancha {{ p.cancha }}</span>
+          </td>
+        </ng-container>
+
+        <!-- Definición de filas -->
+        <tr
+          mat-header-row
+          *matHeaderRowDef="displayedColumns; sticky: true"
+        ></tr>
+        <tr
+          mat-row
+          class="partido-row"
+          *matRowDef="let row; columns: displayedColumns"
+        ></tr>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>

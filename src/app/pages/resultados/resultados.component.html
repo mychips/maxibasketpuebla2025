@@ -1,0 +1,27 @@
+<section>
+  @defer{
+  <app-toolbar></app-toolbar>
+  }@loading(minimum 1s) {
+  <div class="spinner-container">
+    <mat-spinner mode="indeterminate"></mat-spinner>
+  </div>
+  }
+  <mat-form-field class="neon-input" appearance="outline">
+    <mat-label> Selecciona la Sede </mat-label>
+    <mat-select (selectionChange)="onSelectionChange($event)">
+      <mat-option *ngFor="let sede of sedes" [value]="sede.value">
+        {{ sede.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-card>
+    <div *ngIf="imagenesMostradas.length > 0; else noSelection">
+      <mat-card *ngFor="let imagenUrl of imagenesMostradas" class="sliderRoot">
+        <img class="image" [src]="imagenUrl" />
+      </mat-card>
+    </div>
+    <ng-template #noSelection>
+      <p>Por favor, selecciona una sede para ver los resultados.</p>
+    </ng-template>
+  </mat-card>
+</section>

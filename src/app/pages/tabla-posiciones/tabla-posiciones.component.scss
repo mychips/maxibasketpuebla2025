@@ -1,0 +1,57 @@
+// --- Estilos existentes (título, tabla, celdas, etc.) ---
+
+.standings-container {
+  max-width: 1000px; // Un poco más ancho para los filtros
+  margin: 40px auto;
+}
+
+mat-card-title,
+mat-card-subtitle {
+  text-align: center;
+}
+
+// ... (estilos de la tabla, .positive, .negative, etc. se mantienen) ...
+
+// --- NUEVOS ESTILOS ---
+
+/* Contenedor de los filtros */
+.filtros-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Para que se ajusten en móviles */
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.filtros-container mat-form-field {
+  flex-grow: 1; /* Hacemos que crezcan para ocupar el espacio */
+  min-width: 250px; /* Ancho mínimo para cada select */
+}
+
+/* Divisor visual */
+.divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  margin-bottom: 20px;
+}
+
+/* Contenedor para la tabla (para responsiveness) */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto; /* Scroll horizontal en móviles si la tabla es muy ancha */
+}
+
+/* Mensaje cuando no hay datos */
+.no-data-container {
+  text-align: center;
+  padding: 40px 20px;
+  color: #757575;
+  font-style: italic;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+}
