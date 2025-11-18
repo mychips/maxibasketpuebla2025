@@ -20,6 +20,7 @@ import { GruposComponent } from './pages/grupos/grupos.component';
 import { ResultadosComponent } from './pages/resultados/resultados.component';
 import { TablaPosicionesComponent } from './pages/tabla-posiciones/tabla-posiciones.component';
 import { RolesComponent } from './pages/roles/roles.component';
+import { FinalsComponent } from './pages/finals/finals.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent, title: 'Pagina Principal' },
@@ -63,6 +64,11 @@ export const routes: Routes = [
   {
     path: 'roles',
     component: RolesComponent,
+    title: 'Rol de juegos de finales',
+  },
+  {
+    path: 'finals',
+    component: FinalsComponent,
     title: 'Rol de juegos de finales',
   },
   {

@@ -1,0 +1,139 @@
+<div class="bracket-container">
+  <div class="round">
+    <h3>Cuartos de Final</h3>
+    <mat-card
+      class="match-card"
+      *ngFor="let match of bracketData.quarterFinals"
+    >
+      <div class="match-content">
+        <div class="team">
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              placeholder="Equipo A"
+              [(ngModel)]="match.teamA.name"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="score-input">
+            <input
+              matInput
+              type="number"
+              placeholder="0"
+              [(ngModel)]="match.teamA.score"
+            />
+          </mat-form-field>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="team">
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              placeholder="Equipo B"
+              [(ngModel)]="match.teamB.name"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="score-input">
+            <input
+              matInput
+              type="number"
+              placeholder="0"
+              [(ngModel)]="match.teamB.score"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="round">
+    <h3>Semifinales</h3>
+    <mat-card class="match-card" *ngFor="let match of bracketData.semiFinals">
+      <div class="match-content">
+        <div class="team">
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              placeholder="Equipo A"
+              [(ngModel)]="match.teamA.name"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="score-input">
+            <input
+              matInput
+              type="number"
+              placeholder="0"
+              [(ngModel)]="match.teamA.score"
+            />
+          </mat-form-field>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="team">
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              placeholder="Equipo B"
+              [(ngModel)]="match.teamB.name"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="score-input">
+            <input
+              matInput
+              type="number"
+              placeholder="0"
+              [(ngModel)]="match.teamB.score"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="round">
+    <h3>Final</h3>
+    <mat-card class="match-card" *ngFor="let match of bracketData.final">
+      <div class="match-content">
+        <div class="team">
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              placeholder="Equipo A"
+              [(ngModel)]="match.teamA.name"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="score-input">
+            <input
+              matInput
+              type="number"
+              placeholder="0"
+              [(ngModel)]="match.teamA.score"
+            />
+          </mat-form-field>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <div class="team">
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              placeholder="Equipo B"
+              [(ngModel)]="match.teamB.name"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="score-input">
+            <input
+              matInput
+              type="number"
+              placeholder="0"
+              [(ngModel)]="match.teamB.score"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
